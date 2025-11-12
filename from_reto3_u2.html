@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de la persona Usuaria</title>
+    <style>
+        /* 
+        Nombre del alumno: Pedro Lara Abad
+        Matrícula: 24003897
+        Asesor: César Alejandro López Castañeda
+
+           ====================================
+           ESTILIZACIÓN DEL FORMULARIO
+           ==================================== */
+
+        /* Selector de Elemento: Estilos base del cuerpo */
+        body {
+            font-family: 'Verdana', sans-serif; /* Tipografía */
+            background-color: #f0f4f8; /* Background: color de fondo general */
+            color: #333; /* Color de texto base */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Selector de ID: Contenedor principal del formulario */
+        #formulario-container {
+            background-color: #b4d5ef; /* Background: fondo para el formulario */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 500px;
+            
+            /* Se añade posicionamiento relativo para que la imagen se posicione respecto a este contenedor */
+            position: relative; 
+        }
+
+        /* Selector de Elemento: Título */
+        h1 {
+            color: #00796b; /* Color de texto  */
+            text-align: center;
+            font-size: 28px; /* Tamaño de fuente */
+            border-bottom: 2px solid #a925d4;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        /* Selector de CLASE: Estilos para la imagen del logo */
+        .logo-esquina {
+            position: absolute; /* Posicionamiento absoluto */
+            top: 1px;          /* Separación desde arriba */
+            right: 15px;        /* Separación desde la derecha */
+            width: 200px;       /* TAMAÑO */
+            height: auto;
+            border-radius: 0%; /* Opcional: para hacerlo circular */
+            border: 0px solid #00796b; 
+        }
+
+
+        /* Selector de Elemento: Etiquetas (Labels) */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #0a1c77;
+            font-size: 14px; /* Tamaño de fuente */
+        }
+
+        /* Selector de Clase: Estilo para todos los campos de texto y textarea */
+        .campo-input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc; /* Borde simple */
+            border-radius: 6px;
+            box-sizing: border-box; /* Asegura que padding no aumente el ancho */
+            font-size: 16px; /* Tamaño de fuente */
+            transition: border-color 0.3s;
+        }
+        
+        /* Estilo al enfocar el campo (focus) */
+        .campo-input:focus, textarea:focus {
+            border-color: #e38b49; /* Borde cambia de color al enfocar */
+            outline: none;
+        }
+
+        /* Selector de Elemento: Área de texto */
+        textarea {
+            resize: vertical; /* Permite redimensionar solo verticalmente */
+            height: 100px;
+        }
+
+        /* Selector de Clase: Estilos para la sección de intereses */
+        .intereses-group {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px dashed #00796b; /* Borde punteado */
+            border-radius: 6px;
+            background-color: #e1fcd8; /* Background: color de fondo suave */
+        }
+
+        /* Selector de Elemento: Botón de envío */
+        button[type="submit"] {
+            background-color: #00796b; /* Background del botón */
+            color: white; /* Color de texto */
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px; /* Tamaño de fuente */
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        /* Estilo al pasar el ratón (hover) */
+        button[type="submit"]:hover {
+            background-color: #004d40;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Uso del selector ID: Contenedor principal -->
+    <div id="formulario-container">
+        
+        <!-- IMAGEN  -->
+        <img src="log.png" alt="Logo de la aplicación" class="logo-esquina">
+        
+        <h1>Registro de la persona Usuaria</h1>
+
+        <!-- Uso del selector ELEMENTO: Formulario -->
+        <form action="#" method="post">
+            
+            <!-- Campo Nombre -->
+            <div>
+                <label for="nombre">Nombre:</label>
+                <!-- Uso del selector CLASE: para el campo de texto -->
+                <input type="text" id="nombre" name="nombre" class="campo-input" required>
+            </div>
+
+            <!-- Campo Apellido -->
+            <div>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" class="campo-input" required>
+            </div>
+
+            <!-- Campo Correo Electrónico -->
+            <div>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" class="campo-input" required>
+            </div>
+
+            <!-- Campo Contraseña -->
+            <div>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" class="campo-input" required>
+            </div>
+
+            <!-- Área de Texto para Descripción -->
+            <div>
+                <label for="descripcion">Breve Descripción sobre mí:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" maxlength="500"></textarea>
+            </div>
+
+            <!-- Conjunto de Opciones (Checkboxes) -->
+            <div class="intereses-group">
+                <label>Intereses:</label>
+                <div>
+                    <input type="checkbox" id="tec" name="intereses" value="tecnologia">
+                    <label for="tec" style="display: inline;">Tecnología</label><br>
+
+                    <input type="checkbox" id="cult" name="intereses" value="cultura">
+                    <label for="arte" style="display: inline;">Cultura</label><br>
+                    
+                    <input type="checkbox" id="deporte" name="intereses" value="deporte">
+                    <label for="deporte" style="display: inline;">Deporte</label>
+                </div>
+            </div>
+
+            <!-- Botón de Envío -->
+            <div>
+                <button type="submit">Registrarse</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
